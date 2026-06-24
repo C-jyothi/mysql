@@ -1,0 +1,18 @@
+INSERT INTO books (id,title,author,price,genre)
+VALUES
+(1,"The Great Gatsby","Dan Brown",500,"Science"),
+(2,"The ALchemist","Pabli Auelo",400,"History"),
+(3,"Indian Polity","Lakshmi Kanth",600,"History"),
+(4,"Sapiens", "Yuval Noah Harari", 600,"History"),
+(5,"The Alchemist", "Paulo Coelho", 350,"Fiction");
+
+SELECT * FROM books
+WHERE price > 400;
+
+SELECT * FROM `books` WHERE genre IN("fiction","History","Science");
+
+
+SELECT * FROM `books` WHERE title="The Great Gatsby";
+
+SELECT * FROM books
+WHERE author <> 'Dan Brown';
