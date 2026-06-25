@@ -1,0 +1,24 @@
+-- 1. Show all different genres available in the store
+SELECT DISTINCT genre
+FROM books;
+
+-- 2. List all books that are in stock and priced below 400
+SELECT *
+FROM books
+WHERE stock_status = 'In Stock' AND price < 400;
+
+-- 3. List all books that are either out of stock or have a price above 700
+SELECT *
+FROM books
+WHERE stock_status = 'Out of Stock' OR price > 700;
+
+-- 4. Show the title and price with 10% GST added
+SELECT title,
+       price,
+       price * 1.10 AS price_with_gst
+FROM books;
+
+-- 5. Display title, price, and stock_status sorted by price from highest to lowest
+SELECT title, price, stock_status
+FROM books
+ORDER BY price DESC;
