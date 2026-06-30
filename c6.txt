@@ -1,0 +1,35 @@
+-- Insert records into books table
+INSERT INTO books (id, title, author, genre, price, copies_sold) VALUES
+(1, 'The Silent Patient', 'Alex Michaelides', 'Thriller', 399.00, 1200),
+(2, 'Atomic Habits', 'James Clear', 'Self-help', 499.00, 2000),
+(3, 'The Psychology of Money', 'Morgan Housel', 'Finance', 350.00, 1800);
+
+-- Insert records into bestsellers table
+INSERT INTO bestsellers (id, title, author, genre, price, copies_sold) VALUES
+(4, 'Ikigai', 'Francesc Miralles', 'Philosophy', 300.00, 2500),
+(5, 'Think Like a Monk', 'Jay Shetty', 'Self-help', 450.00, 2200);
+
+-- Show title and author from both tables
+SELECT title, author
+FROM books
+UNION
+SELECT title, author
+FROM bestsellers;
+
+-- Display books with price greater than 400
+SELECT *
+FROM books
+WHERE price > 400;
+
+-- Show the average price of books
+SELECT AVG(price) AS average_price
+FROM books;
+
+-- Display the number of books
+SELECT COUNT(*) AS total_books
+FROM books;
+
+-- Show title and author with aliases
+SELECT title AS "Book Title",
+       author AS "Written By"
+FROM books;
